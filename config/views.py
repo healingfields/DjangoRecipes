@@ -4,15 +4,23 @@ from articles.models import Article
 from django.template.loader import render_to_string,get_template
 
 
-def home_view(request):
+def home_view(request,*args,**kwargs):
 
-   
+    print(args,kwargs)
     name = "idriss"
     number = random.randint(10,100)
     # file = open("config/template.html","r")
     # string = file.read()
     obj = Article.objects.get(id=1)
+    article_queryset = Article.objects.all()
+    my_list = [10,50,14,656,86]
+    # my_list_string = ""
+    # for x in my_list :
+    #     my_list_string += f"number is {x}/n"
+
+
     context = {
+        "object_list":article_queryset,
         "obj":obj,
         "title":obj.title,
         "content":obj.content,

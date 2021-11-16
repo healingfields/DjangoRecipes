@@ -6,8 +6,13 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <h1 style="max-width: 600px;margin: 100px auto;border-bottom: 5px dotted violet;text-align: center;">thats my header</h1>
+    <header style="border-bottom: 4px dotted violet;margin: 100px auto;max-width:600px;text-align: center;padding-bottom: 25px;">
+        <h1 >thats my header</h1>
+        <form action="/articles/">
+            <input type="text" name="query"/>
+            <input type="submit" value="submit" />
+        </form>
+        
     </header>
     {% block content %}
 
